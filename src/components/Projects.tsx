@@ -2,9 +2,6 @@
 
 import { useState } from "react";
 import Section from "./Section";
-import movieApp from "../../asserts/Movie-Recommendation.png";
-import movieDetails from "../../asserts/movie_details.png";
-import watchedMovies from "../../asserts/Watched_Movies.png";
 
 const projects = [
     {
@@ -15,7 +12,7 @@ const projects = [
             "Designed and developed recommendation algorithm offering personalized movie recommendation using Natural Language Processing.",
             "Built a web app using React, MongoDB and Flask Web development framework.",
         ],
-        images: [movieApp, movieDetails, watchedMovies],
+        images: ["/assets/Movie-Recommendation.png", "/assets/movie_details.png", "/assets/Watched_Movies.png"],
         link: "https://github.com/thanushcurtis/moviematch",
         tech: ["React.js", "Flask", "Python", "MongoDB", "NLP"],
     },
@@ -57,7 +54,7 @@ export default function Projects() {
                                     {project.images.map((img, imgIndex) => (
                                         <div key={imgIndex} className="min-w-full h-full flex items-center justify-center relative">
                                             <img
-                                                src={img.src}
+                                                src={img}
                                                 alt={`${project.title} screenshot ${imgIndex + 1}`}
                                                 className="max-w-full max-h-full object-contain shadow-sm rounded-lg"
                                             />

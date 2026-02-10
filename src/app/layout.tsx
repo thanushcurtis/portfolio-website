@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Thanush Thilipkumar | Portfolio",
-    description: "Projects, skills, and ways to contact Thanush.",
+    description: "Experience, skills, and ways to contact Thanush.",
     images: ["/og-image.png"],
   },
 };

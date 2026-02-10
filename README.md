@@ -4,7 +4,7 @@ A personal portfolio website showcasing my projects, skills, and experience as a
 
 ## ✨ Features
 
--   **Modern UI/UX**: Clean, responsive design with a focus on typography and whitespace.
+-   **Modern UI/UX**: Clean, responsive design with [Lexend](https://fonts.google.com/specimen/Lexend) font.
 -   **Dark/Light Mode**: Fully supported theme toggling with system preference detection.
 -   **Interactive Elements**: Smooth transitions and hover effects for an engaging user experience.
 -   **Optimized Performance**: Static site generation (SSG) for fast load times and SEO.

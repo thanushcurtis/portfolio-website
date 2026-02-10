@@ -1,5 +1,4 @@
 import Section from "./Section";
-import awsBadge from "../../asserts/aws-certified-solutions-architect-associate.png";
 
 const items = [
   {
@@ -49,9 +48,6 @@ const items = [
 ];
 
 const technicalSkills = [
-  { category: "Languages", skills: ["Java", "Python", "JavaScript", "SQL"] },
-  { category: "Backend", skills: ["REST APIs", "Quarkus", "Flask", "Django"] },
-  { category: "Frontend", skills: ["React.js"] },
   { category: "Data & Processing", skills: ["Airflow", "Databricks", "JavaScript", "SQL", "Oracle & Postgres Databases"] },
   { category: "Cloud & Tooling", skills: ["AWS Certified Solutions Architect – Associate", "Docker"] },
   { category: "Monitoring", skills: ["Micrometer", "Prometheus", "Grafana"] },
@@ -96,8 +92,7 @@ export default function Expertise() {
 
         <div className="flex flex-col gap-16">
           <div>
-            <h3 className="text-xl font-bold mb-6 text-center sm:text-left">Technical Skills</h3>
-            <div className="space-y-4">
+            <div className="space-y-4 max-w-4xl mx-auto">
               {technicalSkills.map((category) => (
                 <div key={category.category} className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-10 border-b border-black/5 dark:border-white/5 pb-4 last:border-0">
                   <h4 className="text-sm font-bold min-w-[180px] uppercase tracking-wider opacity-80">{category.category}:</h4>
@@ -123,7 +118,7 @@ export default function Expertise() {
             >
               <div className="relative w-32 h-32 flex-shrink-0 transform group-hover:scale-105 transition-transform duration-300">
                 <img
-                  src={awsBadge.src}
+                  src="/assets/aws-certified-solutions-architect-associate.png"
                   alt="AWS Certified Solutions Architect - Associate"
                   className="object-contain w-full h-full drop-shadow-sm"
                 />

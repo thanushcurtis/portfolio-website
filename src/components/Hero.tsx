@@ -1,4 +1,4 @@
-import thanush from "../../asserts/thanush.png";
+
 
 export default function Hero() {
   return (
@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="container mx-auto px-6 text-center max-w-3xl">
         <div className="relative w-24 h-24 mx-auto">
           <img
-            src={thanush.src ? thanush.src : String(thanush)}
+            src="/assets/thanush.png"
             alt="Profile photo"
             width={96}
             height={96}
@@ -26,12 +26,12 @@ export default function Hero() {
         </p>
         <div className="mt-8 mx-auto w-full text-center space-y-6">
           <p className="mt-4 mx-auto opacity-80 text-sm sm:text-base leading-relaxed">
-            I&apos;m a software Engineer focused on building scalable, performant backend systems and APIs.
+            I am a Software Engineer focused on building scalable, performant backend systems and APIs.
             I enjoy working across real business problems and delivering technical solutions that add real value.
           </p>
           <p className="mt-4 mx-auto opacity-80 text-sm sm:text-base leading-relaxed">
-            I&apos;m a big believer in my passion for technology. Whenever it comes to new frameworks or technologies,
-            I&apos;ll adapt quickly and eagerly take on new challenges to expand my skill set.
+            I have a strong passion for technology. Whenever it comes to new frameworks or technologies,
+            I&apos;ll adapt quickly and eagerly take on new challenges to expand my skills.
           </p>
         </div>
         <div className="mt-8">
