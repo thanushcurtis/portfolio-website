@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f4f4f5;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-lexend);
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+/* Base containers */
+.container {
+  max-width: 1120px;
+}
+
+/* Simple wave animation for the hand emoji in the hero badge */
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  5% {
+    transform: rotate(14deg);
+  }
+
+  10% {
+    transform: rotate(-8deg);
+  }
+
+  15% {
+    transform: rotate(12deg);
+  }
+
+  20% {
+    transform: rotate(-6deg);
+  }
+
+  25% {
+    transform: rotate(10deg);
+  }
+
+  30% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.wave-emoji {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 2.8s ease-in-out infinite;
+}
