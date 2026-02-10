@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Section from "./Section";
 
 const projects = [
@@ -21,6 +21,26 @@ const projects = [
 export default function Projects() {
     // State to track the active image index for each project
     const [activeIndices, setActiveIndices] = useState<number[]>(projects.map(() => 0));
+    const [isHovered, setIsHovered] = useState<number | null>(null);
+
+    // Auto-play effect
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveIndices((prev) => {
+                return prev.map((currentIndex, projectIndex) => {
+                    // Only auto-advance if not hovered
+                    if (isHovered === projectIndex) return currentIndex;
+
+                    const totalImages = projects[projectIndex].images.length;
+                    if (totalImages <= 1) return currentIndex;
+
+                    return (currentIndex + 1) % totalImages;
+                });
+            });
+        }, 2000); // 2 seconds interval
+
+        return () => clearInterval(interval);
+    }, [isHovered]);
 
     const handleNext = (projectIndex: number, totalImages: number) => {
         setActiveIndices((prev) => {
@@ -48,7 +68,11 @@ export default function Projects() {
                     >
                         <div className="flex flex-col lg:flex-row">
                             {/* Image Carousel Section */}
-                            <div className="lg:w-1/2 relative min-h-[300px] bg-zinc-100 dark:bg-zinc-900/50 flex items-center justify-center p-4 overflow-hidden">
+                            <div
+                                className="lg:w-1/2 relative min-h-[300px] bg-zinc-100 dark:bg-zinc-900/50 flex items-center justify-center p-4 overflow-hidden"
+                                onMouseEnter={() => setIsHovered(index)}
+                                onMouseLeave={() => setIsHovered(null)}
+                            >
                                 <div className="absolute inset-0 flex transition-transform duration-500 ease-in-out"
                                     style={{ transform: `translateX(-${activeIndices[index] * 100}%)` }}>
                                     {project.images.map((img, imgIndex) => (
