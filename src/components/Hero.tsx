@@ -50,25 +50,21 @@ export default function Hero() {
           </span>
         </div>
         <h1 className="mt-6 text-[32px] sm:text-[40px] font-semibold tracking-tight">
-          I’m Thanush,
+          I'm Thanush,
         </h1>
         <div className="mt-1 text-[34px] sm:text-[44px] font-extrabold tracking-tight">&lt;Software Engineer/&gt;</div>
-        <p className="mt-3 mx-auto opacity-80 text-sm sm:text-base whitespace-nowrap overflow-x-auto">
-          Associate Software Engineer | Aspiring Computer Scientist | Graduate at Queen Mary University of London
+        <p className="mt-4 mx-auto opacity-70 text-base sm:text-xl leading-relaxed max-w-2xl font-medium">
+          Building scalable backend systems and data pipelines.
         </p>
-        <div className="mt-8 mx-auto w-full text-center space-y-6">
-          <p className="mt-4 mx-auto opacity-80 text-sm sm:text-base leading-relaxed">
-            I am a Software Engineer focused on building scalable, performant backend systems and APIs.
-            I enjoy working across real business problems and delivering technical solutions that add real value.
-          </p>
-          <p className="mt-4 mx-auto opacity-80 text-sm sm:text-base leading-relaxed">
-            I have a strong passion for technology. Whenever it comes to new frameworks or technologies,
-            I&apos;ll adapt quickly and eagerly take on new challenges to expand my skills.
-          </p>
-        </div>
+        <p className="mt-1 mx-auto opacity-50 text-sm">
+          Software Engineer @ EquiLend
+        </p>
+        <p className="mt-1 mx-auto opacity-50 text-sm">
+          Computer Science, Queen Mary University of London
+        </p>
         <div className="mt-8">
           <a
-            href="#contact"
+            href="mailto:thanushcurtis@gmail.com"
             className="group/btn inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 shadow-sm transition-transform hover:scale-105"
           >
             Let’s talk
