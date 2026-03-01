@@ -50,7 +50,7 @@ export default function Hero() {
           </span>
         </div>
         <h1 className="mt-6 text-[32px] sm:text-[40px] font-semibold tracking-tight">
-          I'm Thanush,
+          I&apos;m Thanush,
         </h1>
         <div className="mt-1 text-[34px] sm:text-[44px] font-extrabold tracking-tight">&lt;Software Engineer/&gt;</div>
         <p className="mt-4 mx-auto opacity-70 text-base sm:text-xl leading-relaxed max-w-2xl font-medium">
