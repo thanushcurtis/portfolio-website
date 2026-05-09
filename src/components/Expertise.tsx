@@ -2,6 +2,13 @@ import Section from "./Section";
 
 const items = [
   {
+    title: "AI & Agents", subtitle: "Agentic AI & RAG", category: "AI", icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 opacity-80 text-blue-500">
+        <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path>
+      </svg>
+    )
+  },
+  {
     title: "Java", subtitle: "Object-oriented & backend", category: "Languages", icon: (
       <img src="/logos/java.png" alt="Java" className="w-10 h-10 object-contain" />
     )
@@ -14,11 +21,6 @@ const items = [
   {
     title: "Databases", subtitle: "Enterprise RDBMS & SQL expertise", category: "Languages", icon: (
       <img src="/logos/postgresql-original.svg" alt="Databases" className="w-10 h-10 object-contain" />
-    )
-  },
-  {
-    title: "React.js", subtitle: "Front End", category: "Frameworks", icon: (
-      <img src="/logos/react.png" alt="React" className="w-10 h-10 object-contain" />
     )
   },
 
@@ -48,8 +50,9 @@ const items = [
 ];
 
 const technicalSkills = [
+  { category: "AI & Agents", skills: ["LangChain", "Vector Search", "FastAPI", "Agentic Workflows"] },
   { category: "Data & Processing", skills: ["Airflow", "Databricks", "JavaScript", "SQL", "Oracle & Postgres Databases"] },
-  { category: "Cloud & Tooling", skills: ["AWS Certified Solutions Architect – Associate", "Docker"] },
+  { category: "Cloud & Tooling", skills: ["AWS Certified Solutions Architect – Associate", "Docker", "Google Cloud"] },
   { category: "Monitoring", skills: ["Micrometer", "Prometheus", "Grafana"] },
 ];
 

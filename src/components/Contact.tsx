@@ -3,40 +3,58 @@ import Section from "./Section";
 export default function Contact() {
   return (
     <Section id="contact" title="Contact" className="rounded-2xl">
-      <div className="max-w-6xl">
-        <h3 className="text-xl sm:text-2xl font-bold tracking-tight">Thanush Thilipkumar</h3>
-        <p className="mt-2 font-medium opacity-90">
-          Associate Software Engineer & Computer Science Graduate
-        </p>
-        <div className="mt-3 space-y-3 opacity-90">
-          <p>
-            Passionate about Technology, with a strong foundation in Backend Software Engineering. Experienced in building scalble backend solutions.
-          </p>
-          <p>
-            Currently seeking opportunities to apply my expertise as an Software Engineer, contribute effectively, and further enhance my skills in a challenging environment.
-          </p>
+      <div className="max-w-4xl mx-auto">
+        <div className="font-mono text-sm sm:text-base bg-zinc-50 dark:bg-[#0d1117] text-zinc-800 dark:text-[#c9d1d9] p-4 sm:p-8 rounded-2xl border border-black/10 dark:border-white/10 shadow-xl relative overflow-hidden">
+          {/* MacOS style window controls */}
+          <div className="absolute top-0 left-0 w-full h-11 bg-black/5 dark:bg-white/5 border-b border-black/10 dark:border-white/10 flex items-center px-4 gap-2 backdrop-blur-md">
+            <div className="w-3 h-3 rounded-full bg-red-500/80 border border-black/10 dark:border-0"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500/80 border border-black/10 dark:border-0"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500/80 border border-black/10 dark:border-0"></div>
+            <span className="ml-3 text-xs font-sans font-medium text-foreground/50 tracking-wide">agent.py</span>
+          </div>
+          
+          <div className="pt-10 overflow-x-auto">
+            <p className="mt-2"><span className="text-pink-600 dark:text-pink-400">from</span> typing <span className="text-pink-600 dark:text-pink-400">import</span> <span className="text-orange-500 dark:text-orange-400">TypedDict</span></p>
+            <p><span className="text-pink-600 dark:text-pink-400">from</span> langgraph.graph <span className="text-pink-600 dark:text-pink-400">import</span> <span className="text-orange-500 dark:text-orange-400">StateGraph</span></p>
+            <br />
+            <p><span className="text-pink-600 dark:text-pink-400">class</span> <span className="text-orange-500 dark:text-orange-400">DeveloperState</span>(<span className="text-orange-500 dark:text-orange-400">TypedDict</span>):</p>
+            <div className="pl-4 sm:pl-8 space-y-1.5 mt-1">
+              <p>name: <span className="text-blue-600 dark:text-blue-400">str</span></p>
+              <p>skills: <span className="text-blue-600 dark:text-blue-400">list</span>[<span className="text-blue-600 dark:text-blue-400">str</span>]</p>
+              <p>contact: <span className="text-blue-600 dark:text-blue-400">dict</span></p>
+            </div>
+            <br />
+            <p><span className="text-pink-600 dark:text-pink-400">def</span> <span className="text-blue-600 dark:text-blue-400">get_profile</span>(state: <span className="text-orange-500 dark:text-orange-400">DeveloperState</span>):</p>
+            <div className="pl-4 sm:pl-8 space-y-1.5 mt-2">
+              <p><span className="text-green-600 dark:text-green-400">"""Agent node to retrieve Thanush's profile and contact details."""</span></p>
+              <p><span className="text-pink-600 dark:text-pink-400">return</span> {'{'}</p>
+              <div className="pl-4 sm:pl-8 space-y-1.5">
+                <p><span className="text-green-600 dark:text-green-400">"name"</span>: <span className="text-green-600 dark:text-green-400">"Thanush Thilipkumar"</span>,</p>
+                <p><span className="text-green-600 dark:text-green-400">"role"</span>: <span className="text-green-600 dark:text-green-400">"Software Engineer & AI Enthusiast"</span>,</p>
+                <p><span className="text-green-600 dark:text-green-400">"skills"</span>: [<span className="text-green-600 dark:text-green-400">"Scalable Backends"</span>, <span className="text-green-600 dark:text-green-400">"Agentic Workflows"</span>],</p>
+                <p><span className="text-green-600 dark:text-green-400">"mission"</span>: <span className="text-green-600 dark:text-green-400">"Always looking for new opportunities to build cool things and solve hard problems."</span>,</p>
+                <p><span className="text-green-600 dark:text-green-400">"contact"</span>: {'{'}</p>
+                <div className="pl-4 sm:pl-8 space-y-1.5">
+                  <p>
+                    <span className="text-green-600 dark:text-green-400">"email"</span>: <a href="mailto:thanushcurtis@gmail.com" className="text-green-600 dark:text-green-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:underline">"thanushcurtis@gmail.com"</a>,
+                  </p>
+                  <p>
+                    <span className="text-green-600 dark:text-green-400">"github"</span>: <a href="https://github.com/thanushcurtis" target="_blank" rel="noopener noreferrer" className="text-green-600 dark:text-green-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:underline">"github.com/thanushcurtis"</a>,
+                  </p>
+                  <p>
+                    <span className="text-green-600 dark:text-green-400">"linkedin"</span>: <a href="https://www.linkedin.com/in/thanushcurtis/" target="_blank" rel="noopener noreferrer" className="text-green-600 dark:text-green-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:underline">"linkedin.com/in/thanushcurtis"</a>
+                  </p>
+                </div>
+                <p>{'}'}</p>
+              </div>
+              <p>{'}'}</p>
+            </div>
+            <br />
+            <p><span className="text-zinc-500 dark:text-zinc-400"># Initialize LangGraph Agent</span></p>
+            <p>portfolio_agent <span className="text-pink-600 dark:text-pink-400">=</span> <span className="text-orange-500 dark:text-orange-400">StateGraph</span>(<span className="text-orange-500 dark:text-orange-400">DeveloperState</span>)</p>
+            <p>portfolio_agent.add_node(<span className="text-green-600 dark:text-green-400">"profile"</span>, get_profile)</p>
+          </div>
         </div>
-      </div>
-
-      <div className="mt-6 flex flex-col sm:flex-row gap-3">
-        <a
-          href="mailto:thanushcurtis@gmail.com"
-          className="px-4 py-2 rounded-md border border-black/10 dark:border-white/15 hover:bg-black/5 dark:hover:bg-white/10"
-        >
-          Email
-        </a>
-        <a
-          href="https://github.com/thanushcurtis"
-          className="px-4 py-2 rounded-md border border-black/10 dark:border-white/15 hover:bg-black/5 dark:hover:bg-white/10"
-        >
-          GitHub
-        </a>
-        <a
-          href="https://www.linkedin.com/in/thanushcurtis/"
-          className="px-4 py-2 rounded-md border border-black/10 dark:border-white/15 hover:bg-black/5 dark:hover:bg-white/10"
-        >
-          LinkedIn
-        </a>
       </div>
     </Section>
   );

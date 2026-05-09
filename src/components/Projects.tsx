@@ -5,6 +5,18 @@ import Section from "./Section";
 
 const projects = [
     {
+        title: "Agentic AI Portfolio Advisor",
+        subtitle: "FastAPI | LangGraph | MongoDB Atlas",
+        description: [
+            "Built a multi-node agent graph using LangGraph for personalized financial analysis and portfolio recommendations.",
+            "Integrated MongoDB Atlas for user profiling and Vector Search with Voyage AI embeddings for historical market intelligence.",
+            "Developed a modern React dashboard using Vite to interface with the FastAPI backend, utilizing Cohere's Command-R+ for synthesis.",
+        ],
+        images: ["/assets/Portfolio-chat.png", "/assets/Live-Stocks.png"],
+        link: "https://github.com/thanushcurtis/mongo-db-hackathon",
+        tech: ["FastAPI", "LangGraph", "MongoDB", "Cohere", "React.js"],
+    },
+    {
         title: "Movie Recommendation Web App",
         subtitle: "React.js | Flask | Python (Final Year Project)",
         description: [

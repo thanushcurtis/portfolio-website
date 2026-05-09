@@ -1,11 +1,27 @@
 "use client";
 
-import { useState, useRef, MouseEvent } from "react";
+import { useState, useRef, MouseEvent, useEffect } from "react";
 import Particles from "./Particles";
 
 export default function Hero() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const sectionRef = useRef<HTMLElement>(null);
+  const [typedText, setTypedText] = useState("");
+  const fullText = "<Software Engineer/>";
+
+  useEffect(() => {
+    let i = 0;
+    const typingInterval = setInterval(() => {
+      if (i < fullText.length) {
+        setTypedText(fullText.slice(0, i + 1));
+        i++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 100);
+
+    return () => clearInterval(typingInterval);
+  }, []);
 
   const handleMouseMove = (e: MouseEvent<HTMLElement>) => {
     if (!sectionRef.current) return;
@@ -52,16 +68,10 @@ export default function Hero() {
         <h1 className="mt-6 text-[32px] sm:text-[40px] font-semibold tracking-tight">
           I&apos;m Thanush,
         </h1>
-        <div className="mt-1 text-[34px] sm:text-[44px] font-extrabold tracking-tight">&lt;Software Engineer/&gt;</div>
-        <p className="mt-4 mx-auto opacity-70 text-base sm:text-xl leading-relaxed max-w-2xl font-medium">
-          Building scalable backend systems and data pipelines.
-        </p>
-        <p className="mt-1 mx-auto opacity-50 text-sm">
-          Software Engineer @ EquiLend
-        </p>
-        <p className="mt-1 mx-auto opacity-50 text-sm">
-          Computer Science, Queen Mary University of London
-        </p>
+        <div className="mt-1 text-[34px] sm:text-[44px] font-extrabold tracking-tight flex justify-center items-center h-[41px] sm:h-[53px]">
+          {typedText}
+          <span className="w-1 h-[34px] sm:h-[44px] bg-foreground ml-1 animate-pulse rounded-sm" />
+        </div>
         <div className="mt-8">
           <a
             href="mailto:thanushcurtis@gmail.com"
