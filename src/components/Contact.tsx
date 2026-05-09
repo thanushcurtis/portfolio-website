@@ -26,23 +26,23 @@ export default function Contact() {
             <br />
             <p><span className="text-pink-600 dark:text-pink-400">def</span> <span className="text-blue-600 dark:text-blue-400">get_profile</span>(state: <span className="text-orange-500 dark:text-orange-400">DeveloperState</span>):</p>
             <div className="pl-4 sm:pl-8 space-y-1.5 mt-2">
-              <p><span className="text-green-600 dark:text-green-400">"""Agent node to retrieve Thanush's profile and contact details."""</span></p>
+              <p><span className="text-green-600 dark:text-green-400">&quot;&quot;&quot;Agent node to retrieve Thanush&apos;s profile and contact details.&quot;&quot;&quot;</span></p>
               <p><span className="text-pink-600 dark:text-pink-400">return</span> {'{'}</p>
               <div className="pl-4 sm:pl-8 space-y-1.5">
-                <p><span className="text-green-600 dark:text-green-400">"name"</span>: <span className="text-green-600 dark:text-green-400">"Thanush Thilipkumar"</span>,</p>
-                <p><span className="text-green-600 dark:text-green-400">"role"</span>: <span className="text-green-600 dark:text-green-400">"Software Engineer & AI Enthusiast"</span>,</p>
-                <p><span className="text-green-600 dark:text-green-400">"skills"</span>: [<span className="text-green-600 dark:text-green-400">"Scalable Backends"</span>, <span className="text-green-600 dark:text-green-400">"Agentic Workflows"</span>],</p>
-                <p><span className="text-green-600 dark:text-green-400">"mission"</span>: <span className="text-green-600 dark:text-green-400">"Always looking for new opportunities to build cool things and solve hard problems."</span>,</p>
-                <p><span className="text-green-600 dark:text-green-400">"contact"</span>: {'{'}</p>
+                <p><span className="text-green-600 dark:text-green-400">&quot;name&quot;</span>: <span className="text-green-600 dark:text-green-400">&quot;Thanush Thilipkumar&quot;</span>,</p>
+                <p><span className="text-green-600 dark:text-green-400">&quot;role&quot;</span>: <span className="text-green-600 dark:text-green-400">&quot;Software Engineer &amp; AI Enthusiast&quot;</span>,</p>
+                <p><span className="text-green-600 dark:text-green-400">&quot;skills&quot;</span>: [<span className="text-green-600 dark:text-green-400">&quot;Scalable Backends&quot;</span>, <span className="text-green-600 dark:text-green-400">&quot;Agentic Workflows&quot;</span>],</p>
+                <p><span className="text-green-600 dark:text-green-400">&quot;mission&quot;</span>: <span className="text-green-600 dark:text-green-400">&quot;Always looking for new opportunities to build cool things and solve hard problems.&quot;</span>,</p>
+                <p><span className="text-green-600 dark:text-green-400">&quot;contact&quot;</span>: {'{'}</p>
                 <div className="pl-4 sm:pl-8 space-y-1.5">
                   <p>
-                    <span className="text-green-600 dark:text-green-400">"email"</span>: <a href="mailto:thanushcurtis@gmail.com" className="text-green-600 dark:text-green-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:underline">"thanushcurtis@gmail.com"</a>,
+                    <span className="text-green-600 dark:text-green-400">&quot;email&quot;</span>: <a href="mailto:thanushcurtis@gmail.com" className="text-green-600 dark:text-green-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:underline">&quot;thanushcurtis@gmail.com&quot;</a>,
                   </p>
                   <p>
-                    <span className="text-green-600 dark:text-green-400">"github"</span>: <a href="https://github.com/thanushcurtis" target="_blank" rel="noopener noreferrer" className="text-green-600 dark:text-green-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:underline">"github.com/thanushcurtis"</a>,
+                    <span className="text-green-600 dark:text-green-400">&quot;github&quot;</span>: <a href="https://github.com/thanushcurtis" target="_blank" rel="noopener noreferrer" className="text-green-600 dark:text-green-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:underline">&quot;github.com/thanushcurtis&quot;</a>,
                   </p>
                   <p>
-                    <span className="text-green-600 dark:text-green-400">"linkedin"</span>: <a href="https://www.linkedin.com/in/thanushcurtis/" target="_blank" rel="noopener noreferrer" className="text-green-600 dark:text-green-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:underline">"linkedin.com/in/thanushcurtis"</a>
+                    <span className="text-green-600 dark:text-green-400">&quot;linkedin&quot;</span>: <a href="https://www.linkedin.com/in/thanushcurtis/" target="_blank" rel="noopener noreferrer" className="text-green-600 dark:text-green-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:underline">&quot;linkedin.com/in/thanushcurtis&quot;</a>
                   </p>
                 </div>
                 <p>{'}'}</p>
@@ -52,7 +52,7 @@ export default function Contact() {
             <br />
             <p><span className="text-zinc-500 dark:text-zinc-400"># Initialize LangGraph Agent</span></p>
             <p>portfolio_agent <span className="text-pink-600 dark:text-pink-400">=</span> <span className="text-orange-500 dark:text-orange-400">StateGraph</span>(<span className="text-orange-500 dark:text-orange-400">DeveloperState</span>)</p>
-            <p>portfolio_agent.add_node(<span className="text-green-600 dark:text-green-400">"profile"</span>, get_profile)</p>
+            <p>portfolio_agent.add_node(<span className="text-green-600 dark:text-green-400">&quot;profile&quot;</span>, get_profile)</p>
           </div>
         </div>
       </div>
