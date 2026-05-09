@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d out -b gh-pages -r https://github.com/thanushcurtis/thanushcurtis.github.io.git"
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.2.0",
