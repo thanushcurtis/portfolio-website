@@ -43,7 +43,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
       </body>
-      <GoogleAnalytics gaId="G-6GXVMMYMBZ" />
+      <GoogleAnalytics gaId="G-M32WSJXLFW" />
     </html>
   );
 }
