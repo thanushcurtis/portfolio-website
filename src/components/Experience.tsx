@@ -3,9 +3,17 @@ import GitHubContributions from "./GitHubContributions";
 
 const experiences = [
     {
+        title: "Junior Software Engineer",
+        company: "Yapily",
+        period: "Apr 2026 – Present",
+        location: "Oxford Circus, London",
+        description:
+            "Led and executed the solo migration of database access controls across dev, staging, and production environments, implementing GCP IAM authentication via Terraform to replace manual credential logins for all engineering teams. Investigated and resolved a floating-point precision defect causing payment value discrepancies between raw Open Banking API responses and BigQuery-stored billing data, tracing and applying the fix across 2 microservices.",
+    },
+    {
         title: "Associate Software Engineer, Data",
         company: "EquiLend",
-        period: "Aug 2025 – Present",
+        period: "Aug 2025 – Apr 2026",
         location: "Canary Wharf, London",
         description:
             "Architected and deployed 10+ Airflow ingestion pipelines on Databricks, automating data processing from sources including Salesforce, the NY FED, and ServiceNow into Delta Lake for production analytics.",
