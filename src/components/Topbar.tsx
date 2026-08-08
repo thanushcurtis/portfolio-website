@@ -10,7 +10,7 @@ export default function Topbar() {
             </a>
           </span>
           <a
-            href="/ThanushkumarCV_2026.pdf"
+            href="/assets/ThanushkumarCV_2026.pdf"
             download="Thanushkumar-CV.pdf"
             className="rounded-full border border-black/10 dark:border-white/15 px-3 py-1 hover:bg-black/5 dark:hover:bg-white/10"
           >
