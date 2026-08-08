@@ -8,7 +8,7 @@ const experiences = [
         period: "Apr 2026 – Present",
         location: "Oxford Circus, London",
         description:
-            "Led and executed the solo migration of database access controls across dev, staging, and production environments, implementing GCP IAM authentication via Terraform to replace manual credential logins for all engineering teams. Investigated and resolved a floating-point precision defect causing payment value discrepancies between raw Open Banking API responses and BigQuery-stored billing data, tracing and applying the fix across 2 microservices.",
+            "Migrated database access controls to GCP IAM via Terraform across dev, staging, and production environments, and resolved Open Banking API data precision discrepancies across microservices.",
     },
     {
         title: "Associate Software Engineer, Data",
