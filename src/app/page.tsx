@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="font-sans">
+    <div id="top" className="font-sans">
       <Topbar />
       <main>
         <Hero />

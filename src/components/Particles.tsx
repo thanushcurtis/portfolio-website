@@ -49,7 +49,7 @@ export default function Particles() {
 
             draw() {
                 if (!ctx) return;
-                ctx.fillStyle = "rgba(100, 100, 100, 0.3)"; // Subtle gray
+                ctx.fillStyle = "rgba(120, 120, 200, 0.35)"; // Subtle indigo-gray
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
@@ -80,7 +80,7 @@ export default function Particles() {
 
                     if (distance < 100) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(100, 100, 100, ${0.1 - distance / 1000})`; // Fade out with distance
+                        ctx.strokeStyle = `rgba(120, 120, 200, ${0.12 - distance / 1000})`; // Fade out with distance
                         ctx.lineWidth = 1;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);

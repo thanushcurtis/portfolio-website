@@ -1,12 +1,26 @@
 import Section from "./Section";
+import Reveal from "./Reveal";
 
 export default function Contact() {
   return (
-    <Section id="contact" title="Contact" className="rounded-2xl">
-      <div className="max-w-4xl mx-auto">
-        <div className="font-mono text-sm sm:text-base bg-zinc-50 dark:bg-[#0d1117] text-zinc-800 dark:text-[#c9d1d9] p-4 sm:p-8 rounded-2xl border border-black/10 dark:border-white/10 shadow-xl relative overflow-hidden">
+    <Section id="contact" eyebrow="Get in touch" title="Let's build something" subtitle="Open to interesting conversations about fintech, distributed systems and agentic AI. My inbox is always open.">
+      <Reveal className="mb-8 flex flex-wrap gap-3">
+        <a href="mailto:thanushcurtis@gmail.com" id="contact-email" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/25">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" /></svg>
+          Email me
+        </a>
+        <a href="https://www.linkedin.com/in/thanushcurtis/" target="_blank" rel="noopener noreferrer" id="contact-linkedin" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass text-sm font-medium transition-all hover:-translate-y-0.5 hover:border-accent/40">
+          LinkedIn
+        </a>
+        <a href="https://github.com/thanushcurtis" target="_blank" rel="noopener noreferrer" id="contact-github" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass text-sm font-medium transition-all hover:-translate-y-0.5 hover:border-accent/40">
+          GitHub
+        </a>
+      </Reveal>
+      <Reveal className="relative">
+        <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/20 via-accent-2/10 to-accent-3/20 blur-2xl opacity-70" aria-hidden="true" />
+        <div className="relative font-mono text-[13px] sm:text-[15px] bg-white/80 dark:bg-[#0d1117]/90 backdrop-blur-xl text-zinc-800 dark:text-[#c9d1d9] p-4 sm:p-8 pb-6 rounded-2xl border border-line shadow-2xl relative overflow-hidden">
           {/* MacOS style window controls */}
-          <div className="absolute top-0 left-0 w-full h-11 bg-black/5 dark:bg-white/5 border-b border-black/10 dark:border-white/10 flex items-center px-4 gap-2 backdrop-blur-md">
+          <div className="absolute top-0 left-0 w-full h-11 bg-black/[0.03] dark:bg-white/[0.03] border-b border-line flex items-center px-4 gap-2">
             <div className="w-3 h-3 rounded-full bg-red-500/80 border border-black/10 dark:border-0"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500/80 border border-black/10 dark:border-0"></div>
             <div className="w-3 h-3 rounded-full bg-green-500/80 border border-black/10 dark:border-0"></div>
@@ -31,6 +45,7 @@ export default function Contact() {
               <div className="pl-4 sm:pl-8 space-y-1.5">
                 <p><span className="text-green-600 dark:text-green-400">&quot;name&quot;</span>: <span className="text-green-600 dark:text-green-400">&quot;Thanush Thilipkumar&quot;</span>,</p>
                 <p><span className="text-green-600 dark:text-green-400">&quot;role&quot;</span>: <span className="text-green-600 dark:text-green-400">&quot;Software Engineer &amp; AI Enthusiast&quot;</span>,</p>
+                <p><span className="text-green-600 dark:text-green-400">&quot;company&quot;</span>: <span className="text-green-600 dark:text-green-400">&quot;Fnality&quot;</span>,</p>
                 <p><span className="text-green-600 dark:text-green-400">&quot;skills&quot;</span>: [<span className="text-green-600 dark:text-green-400">&quot;Scalable Backends&quot;</span>, <span className="text-green-600 dark:text-green-400">&quot;Agentic Workflows&quot;</span>],</p>
                 <p><span className="text-green-600 dark:text-green-400">&quot;mission&quot;</span>: <span className="text-green-600 dark:text-green-400">&quot;Always looking for new opportunities to build cool things and solve hard problems.&quot;</span>,</p>
                 <p><span className="text-green-600 dark:text-green-400">&quot;contact&quot;</span>: {'{'}</p>
@@ -52,10 +67,10 @@ export default function Contact() {
             <br />
             <p><span className="text-zinc-500 dark:text-zinc-400"># Initialize LangGraph Agent</span></p>
             <p>portfolio_agent <span className="text-pink-600 dark:text-pink-400">=</span> <span className="text-orange-500 dark:text-orange-400">StateGraph</span>(<span className="text-orange-500 dark:text-orange-400">DeveloperState</span>)</p>
-            <p>portfolio_agent.add_node(<span className="text-green-600 dark:text-green-400">&quot;profile&quot;</span>, get_profile)</p>
+            <p>portfolio_agent.add_node(<span className="text-green-600 dark:text-green-400">&quot;profile&quot;</span>, get_profile)<span className="inline-block w-2 h-4 ml-1 align-middle bg-accent animate-pulse" /></p>
           </div>
         </div>
-      </div>
+      </Reveal>
     </Section>
   );
 }

@@ -81,11 +81,11 @@ export default function GitHubContributions() {
     return (
         <div className="mt-16">
             <div className="flex items-center justify-between mb-4">
-                <h3 className="text-sm font-medium opacity-70 uppercase tracking-wider">Activity</h3>
+                <h3 className="text-xs font-semibold text-muted uppercase tracking-[0.14em]">GitHub Activity</h3>
                 <span className="text-sm opacity-60">{totalContributions.toLocaleString()} contributions in the last year</span>
             </div>
 
-            <div className="rounded-xl border border-black/5 dark:border-white/10 bg-zinc-50 dark:bg-zinc-800/50 p-4 overflow-x-auto">
+            <div className="card p-5 overflow-x-auto hover:transform-none">
                 <div style={{ width: totalWidth, position: "relative", margin: "0 auto" }}>
                     {/* Month Labels — absolutely positioned at exact week columns */}
                     <div style={{ height: 16, position: "relative", marginLeft: DAY_LABEL_WIDTH, marginBottom: 4 }}>

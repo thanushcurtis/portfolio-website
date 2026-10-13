@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Section from "./Section";
+import Reveal from "./Reveal";
 
 const projects = [
     {
@@ -71,28 +72,37 @@ export default function Projects() {
     };
 
     return (
-        <Section id="projects" title="Featured Projects" className="bg-white dark:bg-zinc-900">
-            <div className="flex flex-col gap-12">
+        <Section id="projects" eyebrow="Selected work" title="Featured Projects" subtitle="Side projects where I explore agentic AI, recommendation systems and full-stack product building.">
+            <div className="flex flex-col gap-10">
                 {projects.map((project, index) => (
+                    <Reveal key={index} delay={index * 80}>
                     <div
-                        key={index}
-                        className="group relative overflow-hidden rounded-2xl bg-zinc-50 dark:bg-zinc-800/50 border border-black/5 dark:border-white/10"
+                        className="card group relative overflow-hidden rounded-3xl hover:transform-none"
                     >
-                        <div className="flex flex-col lg:flex-row">
+                        <div className={`flex flex-col lg:flex-row ${index % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
                             {/* Image Carousel Section */}
                             <div
-                                className="lg:w-1/2 relative min-h-[300px] bg-zinc-100 dark:bg-zinc-900/50 flex items-center justify-center p-4 overflow-hidden"
+                                className="lg:w-[55%] relative p-4 sm:p-6"
                                 onMouseEnter={() => setIsHovered(index)}
                                 onMouseLeave={() => setIsHovered(null)}
                             >
-                                <div className="absolute inset-0 flex transition-transform duration-500 ease-in-out"
+                                <div className="absolute inset-0 bg-gradient-to-br from-accent/15 via-accent-2/10 to-transparent" aria-hidden="true" />
+                                <div className="relative rounded-xl overflow-hidden border border-line bg-surface-solid shadow-2xl shadow-black/10 transition-transform duration-500 group-hover:scale-[1.01]">
+                                    {/* Browser chrome */}
+                                    <div className="flex items-center gap-1.5 px-3 h-8 border-b border-line bg-foreground/[0.03]">
+                                        <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
+                                        <span className="w-2.5 h-2.5 rounded-full bg-amber-400/80" />
+                                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/80" />
+                                    </div>
+                                    <div className="relative h-[240px] sm:h-[320px] overflow-hidden">
+                                <div className="absolute inset-0 flex transition-transform duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)]"
                                     style={{ transform: `translateX(-${activeIndices[index] * 100}%)` }}>
                                     {project.images.map((img, imgIndex) => (
-                                        <div key={imgIndex} className="min-w-full h-full flex items-center justify-center relative">
+                                        <div key={imgIndex} className="min-w-full h-full flex items-center justify-center relative bg-foreground/[0.02]">
                                             <img
                                                 src={img}
                                                 alt={`${project.title} screenshot ${imgIndex + 1}`}
-                                                className="max-w-full max-h-full object-contain shadow-sm rounded-lg"
+                                                className="max-w-full max-h-full object-contain"
                                             />
                                         </div>
                                     ))}
@@ -103,53 +113,57 @@ export default function Projects() {
                                     <>
                                         <button
                                             onClick={() => handlePrev(index, project.images.length)}
-                                            className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/70 focus:opacity-100 z-10"
+                                            className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full glass text-foreground opacity-0 group-hover:opacity-100 transition-all hover:scale-110 focus:opacity-100 z-10"
                                             aria-label="Previous image"
                                         >
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
                                         </button>
                                         <button
                                             onClick={() => handleNext(index, project.images.length)}
-                                            className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/70 focus:opacity-100 z-10"
+                                            className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full glass text-foreground opacity-0 group-hover:opacity-100 transition-all hover:scale-110 focus:opacity-100 z-10"
                                             aria-label="Next image"
                                         >
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                                         </button>
 
                                         {/* Dots Indicator */}
-                                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                                        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10 px-2 py-1.5 rounded-full glass">
                                             {project.images.map((_, dotIndex) => (
                                                 <div
                                                     key={dotIndex}
-                                                    className={`w-2 h-2 rounded-full transition-colors ${activeIndices[index] === dotIndex ? "bg-white" : "bg-white/40"}`}
+                                                    className={`h-1.5 rounded-full transition-all duration-300 ${activeIndices[index] === dotIndex ? "w-5 bg-accent" : "w-1.5 bg-foreground/30"}`}
                                                 />
                                             ))}
                                         </div>
                                     </>
                                 )}
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Content Section */}
-                            <div className="lg:w-1/2 p-6 sm:p-8 flex flex-col">
+                            <div className="lg:w-[45%] p-6 sm:p-8 flex flex-col">
                                 <div className="mb-4">
-                                    <h3 className="text-xl sm:text-2xl font-bold mb-2">{project.title}</h3>
-                                    <p className="text-sm font-medium opacity-70 mb-4">{project.subtitle}</p>
+                                    <span className="font-mono text-xs text-accent">{String(index + 1).padStart(2, "0")} /</span>
+                                    <h3 className="mt-2 text-xl sm:text-2xl font-semibold mb-1.5">{project.title}</h3>
+                                    <p className="text-sm font-medium text-muted mb-5">{project.subtitle}</p>
 
-                                    <ul className="space-y-2 mb-6 list-disc list-outside ml-4 text-sm sm:text-base opacity-80">
+                                    <ul className="space-y-2.5 mb-6 text-sm sm:text-[15px] text-muted">
                                         {project.description.map((item, i) => (
-                                            <li key={i} className="pl-1 leading-relaxed">
-                                                {item}
+                                            <li key={i} className="flex gap-3 leading-relaxed">
+                                                <span className="mt-2 w-1.5 h-1.5 shrink-0 rounded-full bg-accent/70" />
+                                                <span>{item}</span>
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
 
-                                <div className="mt-auto pt-4 flex flex-wrap gap-4 items-center justify-between border-t border-black/5 dark:border-white/10">
+                                <div className="mt-auto pt-5 flex flex-wrap gap-4 items-center justify-between border-t border-line">
                                     <div className="flex flex-wrap gap-2">
                                         {project.tech.map((t) => (
                                             <span
                                                 key={t}
-                                                className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-black/5 dark:bg-white/10 text-foreground/80"
+                                                className="chip"
                                             >
                                                 {t}
                                             </span>
@@ -160,7 +174,8 @@ export default function Projects() {
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:opacity-70 transition-opacity"
+                                        id={`project-code-${index}`}
+                                        className="group/code inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground text-background text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/25"
                                     >
                                         View Code
                                         <svg
@@ -182,6 +197,7 @@ export default function Projects() {
                             </div>
                         </div>
                     </div>
+                    </Reveal>
                 ))}
             </div>
         </Section>

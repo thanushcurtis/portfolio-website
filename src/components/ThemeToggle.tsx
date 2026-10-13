@@ -4,35 +4,35 @@ import * as React from "react";
 import { useTheme } from "next-themes";
 
 export function ThemeToggle() {
-    const { setTheme, theme } = useTheme();
+    const { setTheme, resolvedTheme } = useTheme();
     const [mounted, setMounted] = React.useState(false);
 
     React.useEffect(() => {
         setMounted(true);
     }, []);
 
-    if (!mounted) {
-        return null;
-    }
+    const isDark = mounted && resolvedTheme === "dark";
 
     return (
         <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="fixed top-6 right-6 z-50 p-2 rounded-full bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/10 shadow-lg hover:bg-white/20 transition-all dark:bg-black/20"
+            id="theme-toggle"
+            onClick={() => setTheme(isDark ? "light" : "dark")}
+            className="relative inline-flex items-center justify-center w-9 h-9 rounded-full border border-line hover:border-accent/50 hover:bg-foreground/5 transition-all active:scale-90"
             aria-label="Toggle theme"
         >
-            {theme === "dark" ? (
+            {/* Render a fixed-size placeholder until mounted to avoid layout shift */}
+            {!mounted ? null : isDark ? (
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
+                    width="18"
+                    height="18"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="text-yellow-400"
+                    className="text-amber-300 rise"
                 >
                     <circle cx="12" cy="12" r="5" />
                     <line x1="12" y1="1" x2="12" y2="3" />
@@ -47,15 +47,15 @@ export function ThemeToggle() {
             ) : (
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
+                    width="18"
+                    height="18"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="text-slate-700"
+                    className="text-slate-700 rise"
                 >
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
                 </svg>

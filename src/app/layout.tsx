@@ -1,18 +1,22 @@
 import type { Metadata } from "next";
-import { Lexend } from "next/font/google";
+import { Lexend, JetBrains_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 const lexend = Lexend({
   variable: "--font-lexend",
   subsets: ["latin"],
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono-jb",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Thanush Thilipkumar ",
-  description: "Portfolio of Thanush Thilipkumar — projects, skills, and contact.",
+  description: "Portfolio of Thanush Thilipkumar — Software Engineer at Fnality. Experience, projects, skills, and contact.",
 
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   icons: {
@@ -37,9 +41,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${lexend.variable} antialiased`}>
+      <body className={`${lexend.variable} ${jetbrainsMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <ThemeToggle />
+          <div className="page-bg" aria-hidden="true">
+            <div className="aurora aurora-1" />
+            <div className="aurora aurora-2" />
+            <div className="aurora aurora-3" />
+          </div>
           {children}
         </ThemeProvider>
       </body>

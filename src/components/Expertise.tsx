@@ -1,4 +1,5 @@
 import Section from "./Section";
+import Reveal from "./Reveal";
 
 const items = [
   {
@@ -58,86 +59,93 @@ const technicalSkills = [
 
 export default function Expertise() {
   return (
-    <Section className="bg-white dark:bg-zinc-900 rounded-2xl" id="expertise">
+    <Section id="expertise">
       <div className="flex flex-col gap-16">
         <div>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">
+          <Reveal className="text-center mb-12">
+            <span className="eyebrow">Toolkit</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight">
               Expertise Across Leading
               <br />
-              <span className="text-foreground/90">&lt;Dev&gt; Technologies</span>
+              <span className="text-gradient font-mono">&lt;Dev&gt; Technologies</span>
             </h2>
-            <p className="mt-4 max-w-2xl mx-auto opacity-80">
+            <p className="mt-4 max-w-2xl mx-auto text-muted">
               With a deep understanding of modern development frameworks and tools, I specialize in creating scalable, and secure applications.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {items.map((it) => (
-              <div key={it.title} className="flex items-start gap-4 p-4 rounded-lg border border-black/5 dark:border-white/10 bg-zinc-50 dark:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-                <div className="shrink-0 text-foreground/80">
-                  <div className="w-10 h-10 rounded-md flex items-center justify-center overflow-hidden bg-transparent">
-                    {it.icon}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {items.map((it, i) => (
+              <Reveal key={it.title} delay={i * 50}>
+                <div className="card group h-full flex items-center gap-4 p-4">
+                  <div className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center bg-foreground/[0.04] border border-line transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
+                    <div className="w-8 h-8 flex items-center justify-center [&>img]:w-8 [&>img]:h-8 [&>svg]:w-7 [&>svg]:h-7">
+                      {it.icon}
+                    </div>
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-sm">{it.title}</h3>
+                    {it.subtitle.split("\n").map((line, j) => (
+                      <p key={j} className="text-xs text-muted leading-4 mt-1">
+                        {line}
+                      </p>
+                    ))}
                   </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-sm">{it.title}</h3>
-                  {it.subtitle.split("\n").map((line, i) => (
-                    <p key={i} className="text-xs opacity-70 leading-4 mt-0.5">
-                      {line}
-                    </p>
-                  ))}
-                </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
 
-        <div className="flex flex-col gap-16">
-          <div>
-            <div className="space-y-4 max-w-4xl mx-auto">
-              {technicalSkills.map((category) => (
-                <div key={category.category} className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-10 border-b border-black/5 dark:border-white/5 pb-4 last:border-0">
-                  <h4 className="text-sm font-bold min-w-[180px] uppercase tracking-wider opacity-80">{category.category}:</h4>
-                  <div className="flex flex-wrap gap-x-2 gap-y-1">
-                    {category.skills.map((skill, index) => (
-                      <span key={skill} className="text-base text-foreground/90">
-                        {skill}
-                        {index < category.skills.length - 1 && <span className="mx-1 opacity-40"> | </span>}
-                      </span>
-                    ))}
+        <div className="flex flex-col gap-12">
+          <Reveal>
+            <div className="card p-6 sm:p-8 max-w-4xl mx-auto w-full hover:transform-none">
+              <div className="space-y-5">
+                {technicalSkills.map((category) => (
+                  <div key={category.category} className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8 border-b border-line pb-5 last:border-0 last:pb-0">
+                    <h4 className="text-xs font-semibold min-w-[170px] uppercase tracking-[0.14em] text-muted">{category.category}</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map((skill) => (
+                        <span key={skill} className="chip">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="flex justify-center w-full">
+          <Reveal className="flex justify-center w-full">
             <a
               href="https://www.credly.com/badges/88e9cd17-68d8-4959-973c-7324ede5a736/public_url"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col md:flex-row items-center gap-8 p-6 bg-zinc-50 dark:bg-zinc-800/30 rounded-2xl border border-black/5 dark:border-white/10 hover:border-blue-500/30 transition-all hover:bg-zinc-100 dark:hover:bg-zinc-800/50 cursor-pointer w-full max-w-4xl mx-auto"
+              id="aws-cert-link"
+              className="card group relative overflow-hidden flex flex-col md:flex-row items-center gap-8 p-6 sm:p-8 cursor-pointer w-full max-w-4xl mx-auto"
             >
-              <div className="relative w-32 h-32 flex-shrink-0 transform group-hover:scale-105 transition-transform duration-300">
+              <div className="pointer-events-none absolute -right-20 -top-20 w-64 h-64 rounded-full bg-amber-500/10 blur-3xl transition-opacity opacity-60 group-hover:opacity-100" />
+              <div className="relative w-28 h-28 flex-shrink-0 transform group-hover:scale-105 group-hover:-rotate-2 transition-transform duration-500">
                 <img
                   src="/assets/aws-certified-solutions-architect-associate.png"
                   alt="AWS Certified Solutions Architect - Associate"
-                  className="object-contain w-full h-full drop-shadow-sm"
+                  className="object-contain w-full h-full drop-shadow-lg"
                 />
               </div>
 
-              <div className="flex-grow text-center md:text-left space-y-2">
-                <h3 className="text-xl font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">AWS Certified Solutions Architect</h3>
-                <p className="text-lg opacity-80">Associate</p>
+              <div className="relative flex-grow text-center md:text-left space-y-1.5">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">Certification</span>
+                <h3 className="text-xl sm:text-2xl font-semibold group-hover:text-accent transition-colors">AWS Certified Solutions Architect</h3>
+                <p className="text-base text-muted">Associate</p>
               </div>
 
-              <div className="flex-shrink-0 flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-5 py-2.5 rounded-full transition-colors group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30">
+              <div className="relative flex-shrink-0 flex items-center gap-2 text-sm font-medium text-accent border border-accent/30 bg-accent/10 px-5 py-2.5 rounded-full transition-all group-hover:bg-accent group-hover:text-background">
                 Verify
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </div>
             </a>
-          </div>
+          </Reveal>
         </div>
       </div>
     </Section>
